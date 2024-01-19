@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbrshylgtnnos"]
+[gd_scene load_steps=3 format=3 uid="uid://dbrshylgtnnos"]
 
 [ext_resource type="PackedScene" uid="uid://bsdcd5k2v1sv6" path="res://Scenes/test_scene.tscn" id="1_gcvy8"]
+[ext_resource type="PackedScene" uid="uid://d0q8dtghr0a3k" path="res://Prefabs/Player.tscn" id="2_1xo24"]
 
 [node name="Main" type="Node"]
 
 [node name="TestScene" parent="." instance=ExtResource("1_gcvy8")]
+
+[node name="Player" parent="." instance=ExtResource("2_1xo24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98847, 1)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.786795, 0.617214, 0, -0.617214, 0.786795, 1, 8.94701, 15.2602)
