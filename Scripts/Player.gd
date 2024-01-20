@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
-
-@export var SPEED = 10.0
+var SPEED
+@export var WALK_SPEED = 10.0
+@export var SPRINT_SPEED = 20.0
 @export var JUMP_VELOCITY = 5.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -16,6 +17,12 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+
+	# Handle Sprint.
+	if Input.is_action_pressed("sprint"):
+		SPEED = SPRINT_SPEED
+	else:
+		SPEED = WALK_SPEED
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

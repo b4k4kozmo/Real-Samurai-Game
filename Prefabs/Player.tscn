@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0q8dtghr0a3k"]
+[gd_scene load_steps=6 format=3 uid="uid://d0q8dtghr0a3k"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_pdl5x"]
+[ext_resource type="PackedScene" uid="uid://cslmtf2hxu6ci" path="res://Assets/Raw Models/Katana.glb" id="2_ywunr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mgrmh"]
 
@@ -25,3 +26,6 @@ shape = SubResource("CapsuleShape3D_1qt0n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_0k3e1")
+
+[node name="Katana" parent="." instance=ExtResource("2_ywunr")]
+transform = Transform3D(1.50996e-07, 0, 2, 0, 2, 0, -2, 0, 1.50996e-07, 1, 0, 0)

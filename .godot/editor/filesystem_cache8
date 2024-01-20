@@ -1,14 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705715044
+::res://::1705715962
 icon.svg::CompressedTexture2D::2193359882595127890::1705615118::1705715045::1::::<><>::
 ::res://Assets/::1705615714
 ::res://Assets/Raw Models/::1705615740
 Katana.glb::PackedScene::6059711546838908792::1705615738::1705615739::1::::<><>::
 TestScene.glb::PackedScene::3913607128621060462::1705615738::1705615740::1::::<><>::
-::res://Prefabs/::1705715014
-Player.tscn::PackedScene::8949023211792305658::1705715014::0::1::::<><>::res://Scripts/Player.gd
-::res://Scenes/::1705715012
-main.tscn::PackedScene::7265652000815263802::1705715012::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn
+::res://Prefabs/::1705715541
+Player.tscn::PackedScene::8949023211792305658::1705715541::0::1::::<><>::res://Scripts/Player.gd
+::res://Scenes/::1705715794
+main.tscn::PackedScene::7265652000815263802::1705715794::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn
 test_scene.tscn::PackedScene::3656141386211522353::1705615891::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
-::res://Scripts/::1705715014
-Player.gd::GDScript::-1::1705715014::0::1::::<>CharacterBody3D<>::
+::res://Scripts/::1705715794
+Player.gd::GDScript::-1::1705715794::0::1::::<>CharacterBody3D<>::
