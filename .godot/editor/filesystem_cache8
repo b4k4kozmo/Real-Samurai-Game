@@ -1,14 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705719585
-icon.svg::CompressedTexture2D::2193359882595127890::1705615118::1705715045::1::::<><>::
-::res://Assets/::1705615714
-::res://Assets/Raw Models/::1705615740
-Katana.glb::PackedScene::6059711546838908792::1705615738::1705615739::1::::<><>::
-TestScene.glb::PackedScene::3913607128621060462::1705615738::1705615740::1::::<><>::
-::res://Prefabs/::1705719489
-Player.tscn::PackedScene::8949023211792305658::1705719489::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb
-::res://Scenes/::1705719478
-main.tscn::PackedScene::7265652000815263802::1705719478::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn
-test_scene.tscn::PackedScene::3656141386211522353::1705615891::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
-::res://Scripts/::1705719477
-Player.gd::GDScript::-1::1705719477::0::1::::<>CharacterBody3D<>::
+::res://::1705739274
+icon.svg::CompressedTexture2D::2193359882595127890::1705614533::1705739274::1::::<><>::
+::res://Assets/::1705616057
+::res://Assets/Raw Models/::1705616057
+Katana.glb::PackedScene::6059711546838908792::1705616057::1705616057::1::::<><>::
+TestScene.glb::PackedScene::3913607128621060462::1705616057::1705616057::1::::<><>::
+::res://Prefabs/::1705739253
+Player.tscn::PackedScene::8949023211792305658::1705739253::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb
+::res://Scenes/::1705739253
+main.tscn::PackedScene::7265652000815263802::1705739253::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn
+test_scene.tscn::PackedScene::3656141386211522353::1705739253::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
+::res://Scripts/::1705739253
+Player.gd::GDScript::-1::1705739253::0::1::::<>CharacterBody3D<>::

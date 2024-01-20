@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0q8dtghr0a3k"]
+[gd_scene load_steps=7 format=3 uid="uid://d0q8dtghr0a3k"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_pdl5x"]
 [ext_resource type="PackedScene" uid="uid://cslmtf2hxu6ci" path="res://Assets/Raw Models/Katana.glb" id="2_ywunr"]
@@ -6,6 +6,10 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mgrmh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1qt0n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3hre7"]
+radius = 0.0662443
+height = 0.920666
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0k3e1"]
 
@@ -23,9 +27,15 @@ mesh = SubResource("CapsuleMesh_mgrmh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control/HitBox"]
 shape = SubResource("CapsuleShape3D_1qt0n")
 
+[node name="Katana" parent="Control" instance=ExtResource("2_ywunr")]
+transform = Transform3D(-1.33333, -3.23791e-25, 4.23821e-08, -1.91065e-08, 1.19016, -0.601087, -3.7831e-08, -0.601087, -1.19016, 0, 0, -0.666667)
+
+[node name="SlashArea" type="Area3D" parent="Control/Katana"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/Katana/SlashArea"]
+transform = Transform3D(1, -1.63588e-09, -4.21233e-11, 1.63588e-09, 0.998675, 0.0514645, -4.21245e-11, -0.0514645, 0.998675, -4.54953e-10, 0.884582, -0.0143127)
+shape = SubResource("CapsuleShape3D_3hre7")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_0k3e1")
-
-[node name="Katana" parent="." instance=ExtResource("2_ywunr")]
-transform = Transform3D(-2, 0, 6.35732e-08, 0, 2, 0, -6.35732e-08, 0, -2, 0, 0, -1)

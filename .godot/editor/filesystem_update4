@@ -1,3 +1,4 @@
 res://Scenes/main.tscn
 res://Prefabs/Player.tscn
 res://Scenes/test_scene.tscn
+res://Scripts/Player.gd

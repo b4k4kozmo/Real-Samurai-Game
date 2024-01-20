@@ -1,13 +1,37 @@
 extends CharacterBody3D
 
 var SPEED
+var HP
+var STAMINA
+var DAMAGE
+
+# Phyisics variables
 @export var WALK_SPEED = 10.0
 @export var SPRINT_SPEED = 20.0
+@export var SLOW_SPEED = 2.0
 @export var JUMP_VELOCITY = 5.5
+
+# Player stats
+@export var MAX_HP = 10
+@export var MAX_STAMINA = 60
+@export var WALK_DAMAGE = 2
+@export var SPRINT_DAMAGE = 5
+
+# Booleans
+var isAttacking = false
+var isSprinting = false
+
+
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready():
+	HP = MAX_HP
+	STAMINA = MAX_STAMINA
+	DAMAGE = WALK_DAMAGE
+	print_debug(HP , STAMINA , DAMAGE)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -15,14 +39,47 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and STAMINA >= 3:
 		velocity.y = JUMP_VELOCITY
+		STAMINA -= 3
 
 	# Handle Sprint.
 	if Input.is_action_pressed("sprint"):
-		SPEED = SPRINT_SPEED
+		if STAMINA > 0:
+			SPEED = SPRINT_SPEED
+			DAMAGE = SPRINT_DAMAGE
+			isSprinting = true
+			STAMINA -= .1
+		else:
+			SPEED = SLOW_SPEED
 	else:
-		SPEED = WALK_SPEED
+		if STAMINA >= 3:
+			SPEED = WALK_SPEED
+		else: 
+			SPEED = SLOW_SPEED
+		DAMAGE = WALK_DAMAGE
+		isSprinting = false
+	# Handle Attack.
+	if Input.is_action_pressed("attack") and STAMINA > 0:
+		isAttacking = true
+		$Control/Katana.show()
+		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
+		STAMINA -= .1
+		print_debug(STAMINA)
+	elif Input.is_action_just_released("attack"):
+		isAttacking = false
+	elif not isAttacking:
+		$Control/Katana.hide()
+		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
+	elif STAMINA <= 0:
+		$Control/Katana.hide()
+		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
+		
+	if not isAttacking and not isSprinting:
+		STAMINA += .1
+		if STAMINA >= MAX_STAMINA:
+			STAMINA = MAX_STAMINA
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -35,4 +92,5 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	$Control.look_at(global_position + direction, Vector3.UP)
 	move_and_slide()

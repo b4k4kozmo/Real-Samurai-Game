@@ -1,7 +1,7 @@
 CollisionShape3D
+Area3D
 CharacterBody3D
 Camera3D
-Area3D
 MeshInstance3D
 Node3D
 Node
