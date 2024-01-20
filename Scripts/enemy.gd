@@ -12,6 +12,7 @@ var PLAYER = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PLAYER = get_node(PLAYER_PATH)
+	$Blood.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,4 +39,5 @@ func _process(delta):
 func _on_hit_box_area_entered(area):
 	if area.is_in_group('playerSword'):
 		HP -= PLAYER.DAMAGE
+		$Blood.show()
 		print_debug(HP)

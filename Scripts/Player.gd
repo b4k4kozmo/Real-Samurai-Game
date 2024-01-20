@@ -31,6 +31,7 @@ func _ready():
 	HP = MAX_HP
 	STAMINA = MAX_STAMINA
 	DAMAGE = WALK_DAMAGE
+	$Blood.hide()
 	print_debug(HP , STAMINA , DAMAGE)
 
 func _physics_process(delta):
@@ -102,8 +103,10 @@ func _physics_process(delta):
 func _on_hit_box_area_entered(area):
 	if area.is_in_group('sword'):
 		HP -= 3
+		$Blood.show()
 		print_debug(HP)
 		
 func die():
+	$Blood.hide()
 	print_debug('You have died')
 	HP = MAX_HP

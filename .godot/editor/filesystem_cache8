@@ -1,16 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705791806
-icon.svg::CompressedTexture2D::2193359882595127890::1705614533::1705788663::1::::<><>::
-::res://Assets/::1705616057
-::res://Assets/Raw Models/::1705616057
-Katana.glb::PackedScene::6059711546838908792::1705616057::1705616057::1::::<><>::
-TestScene.glb::PackedScene::3913607128621060462::1705616057::1705616057::1::::<><>::
-::res://Prefabs/::1705791562
-Enemy.tscn::PackedScene::495826929569924024::1705791562::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd
-Player.tscn::PackedScene::8949023211792305658::1705791562::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb
-::res://Scenes/::1705791562
-main.tscn::PackedScene::7265652000815263802::1705791562::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
-test_scene.tscn::PackedScene::3656141386211522353::1705744096::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
-::res://Scripts/::1705791562
-enemy.gd::GDScript::-1::1705791424::0::1::::<>CharacterBody3D<>::
-Player.gd::GDScript::-1::1705791562::0::1::::<>CharacterBody3D<>::
+::res://::1705792752
+icon.svg::CompressedTexture2D::2193359882595127890::1705615118::1705792192::1::::<><>::
+::res://Assets/::1705615714
+::res://Assets/Raw Models/::1705615740
+Katana.glb::PackedScene::6059711546838908792::1705615738::1705615739::1::::<><>::
+TestScene.glb::PackedScene::3913607128621060462::1705615738::1705615740::1::::<><>::
+::res://Prefabs/::1705792798
+Enemy.tscn::PackedScene::495826929569924024::1705792646::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd
+Player.tscn::PackedScene::8949023211792305658::1705792646::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb
+::res://Prefabs/Shaders/::1705792798
+Blood.tres::VisualShader::2240210495235219814::1705792798::0::1::::<><>::
+::res://Scenes/::1705792646
+main.tscn::PackedScene::7265652000815263802::1705792646::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
+test_scene.tscn::PackedScene::3656141386211522353::1705776334::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
+::res://Scripts/::1705792174
+enemy.gd::GDScript::-1::1705792174::0::1::::<>CharacterBody3D<>::
+Player.gd::GDScript::-1::1705792174::0::1::::<>CharacterBody3D<>::
