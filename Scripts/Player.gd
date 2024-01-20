@@ -63,9 +63,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("attack") and STAMINA > 0:
 		isAttacking = true
 		$Control/Katana.show()
-		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
+		$Control/Katana/SlashArea/CollisionShape3D.disabled = false
 		STAMINA -= .1
-		print_debug(STAMINA)
+		# print_debug(STAMINA)
 	elif Input.is_action_just_released("attack"):
 		isAttacking = false
 	elif not isAttacking:
@@ -94,3 +94,17 @@ func _physics_process(delta):
 
 	$Control.look_at(global_position + direction, Vector3.UP)
 	move_and_slide()
+	
+	if HP <= 0:
+		die()
+
+
+func _on_hit_box_area_entered(area):
+	print_debug(area)
+	if area.is_in_group('sword'):
+		HP -= 3
+		print_debug(HP)
+		
+func die():
+	print_debug('You have died')
+	HP = MAX_HP

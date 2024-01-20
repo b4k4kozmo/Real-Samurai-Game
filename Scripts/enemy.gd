@@ -3,6 +3,7 @@ extends CharacterBody3D
 var PLAYER = null
 
 @export var SPEED = 4.0
+@export var HP = 10
 
 @export var PLAYER_PATH : NodePath
 @onready var nav_agent = $NavigationAgent3D
@@ -24,3 +25,14 @@ func _process(delta):
 	look_at(Vector3(PLAYER.global_position.x, global_position.y, PLAYER.global_position.z), Vector3.UP)
 	
 	move_and_slide()
+	
+	if HP <= 0:
+		PLAYER.STAMINA = PLAYER.MAX_STAMINA
+		queue_free()
+
+
+func _on_hit_box_area_entered(area):
+	print_debug(area)
+	if area.is_in_group('playerSword'):
+		HP -= PLAYER.DAMAGE
+		print_debug(HP)

@@ -1,3 +1,5 @@
 res://Scenes/main.tscn
 res://Prefabs/Player.tscn
 res://Prefabs/Enemy.tscn
+res://Scripts/Player.gd
+res://Scripts/enemy.gd
