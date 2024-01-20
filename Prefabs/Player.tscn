@@ -28,4 +28,4 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_0k3e1")
 
 [node name="Katana" parent="." instance=ExtResource("2_ywunr")]
-transform = Transform3D(1.50996e-07, 0, 2, 0, 2, 0, -2, 0, 1.50996e-07, 1, 0, 0)
+transform = Transform3D(-2, 0, 6.35732e-08, 0, 2, 0, -6.35732e-08, 0, -2, 0, 0, -1)
