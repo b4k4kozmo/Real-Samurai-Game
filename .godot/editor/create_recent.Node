@@ -1,7 +1,10 @@
-CollisionShape3D
-Area3D
+NavigationAgent3D
 CharacterBody3D
-Camera3D
 MeshInstance3D
+RigidBody3D
+CollisionShape3D
 Node3D
+NavigationRegion3D
+Area3D
+Camera3D
 Node

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://hcggx3m383wu"]
+
+[ext_resource type="PackedScene" uid="uid://cslmtf2hxu6ci" path="res://Assets/Raw Models/Katana.glb" id="1_j6mfl"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_vr3it"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_751qe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vsjj6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bx0ft"]
+radius = 0.0662443
+height = 0.920666
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_44f2t"]
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_vr3it")
+
+[node name="Control" type="Node3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Control"]
+mesh = SubResource("CapsuleMesh_751qe")
+
+[node name="HitBox" type="Area3D" parent="Control"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/HitBox"]
+shape = SubResource("CapsuleShape3D_vsjj6")
+
+[node name="Katana" parent="Control" instance=ExtResource("1_j6mfl")]
+transform = Transform3D(-1.33333, -3.23791e-25, 4.23821e-08, -1.91065e-08, 1.19016, -0.601087, -3.7831e-08, -0.601087, -1.19016, 0, 0, -0.666667)
+
+[node name="SlashArea" type="Area3D" parent="Control/Katana"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/Katana/SlashArea"]
+transform = Transform3D(1, -1.63588e-09, -4.21233e-11, 1.63588e-09, 0.998675, 0.0514645, -4.21245e-11, -0.0514645, 0.998675, -4.54953e-10, 0.884582, -0.0143127)
+shape = SubResource("CapsuleShape3D_bx0ft")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_44f2t")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.15
