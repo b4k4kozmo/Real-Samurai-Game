@@ -100,7 +100,6 @@ func _physics_process(delta):
 
 
 func _on_hit_box_area_entered(area):
-	print_debug(area)
 	if area.is_in_group('sword'):
 		HP -= 3
 		print_debug(HP)

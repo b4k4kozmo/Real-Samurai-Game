@@ -20,7 +20,11 @@ func _process(delta):
 	
 	nav_agent.set_target_position(PLAYER.global_transform.origin)
 	var next_nav_point = nav_agent.get_next_path_position()
-	velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
+	var direction = Vector3.ZERO
+	direction = (PLAYER.position - position).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
 	
 	look_at(Vector3(PLAYER.global_position.x, global_position.y, PLAYER.global_position.z), Vector3.UP)
 	
@@ -32,7 +36,6 @@ func _process(delta):
 
 
 func _on_hit_box_area_entered(area):
-	print_debug(area)
 	if area.is_in_group('playerSword'):
 		HP -= PLAYER.DAMAGE
 		print_debug(HP)

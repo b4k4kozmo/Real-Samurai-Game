@@ -1,16 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705788663
+::res://::1705791806
 icon.svg::CompressedTexture2D::2193359882595127890::1705614533::1705788663::1::::<><>::
 ::res://Assets/::1705616057
 ::res://Assets/Raw Models/::1705616057
 Katana.glb::PackedScene::6059711546838908792::1705616057::1705616057::1::::<><>::
 TestScene.glb::PackedScene::3913607128621060462::1705616057::1705616057::1::::<><>::
-::res://Prefabs/::1705788653
-Enemy.tscn::PackedScene::495826929569924024::1705788653::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd
-Player.tscn::PackedScene::8949023211792305658::1705744095::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb
-::res://Scenes/::1705788653
-main.tscn::PackedScene::7265652000815263802::1705788653::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
+::res://Prefabs/::1705791562
+Enemy.tscn::PackedScene::495826929569924024::1705791562::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd
+Player.tscn::PackedScene::8949023211792305658::1705791562::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb
+::res://Scenes/::1705791562
+main.tscn::PackedScene::7265652000815263802::1705791562::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
 test_scene.tscn::PackedScene::3656141386211522353::1705744096::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
-::res://Scripts/::1705788653
-enemy.gd::GDScript::-1::1705788653::0::1::::<>CharacterBody3D<>::
-Player.gd::GDScript::-1::1705744095::0::1::::<>CharacterBody3D<>::
+::res://Scripts/::1705791562
+enemy.gd::GDScript::-1::1705791424::0::1::::<>CharacterBody3D<>::
+Player.gd::GDScript::-1::1705791562::0::1::::<>CharacterBody3D<>::
