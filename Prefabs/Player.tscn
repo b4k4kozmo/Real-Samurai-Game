@@ -14,7 +14,7 @@ height = 0.920666
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0k3e1"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_pdl5x")
 
 [node name="Control" type="Node3D" parent="."]

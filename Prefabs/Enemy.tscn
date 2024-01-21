@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hcggx3m383wu"]
+[gd_scene load_steps=10 format=3 uid="uid://hcggx3m383wu"]
 
 [ext_resource type="PackedScene" uid="uid://cslmtf2hxu6ci" path="res://Assets/Raw Models/Katana.glb" id="1_j6mfl"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_vr3it"]
@@ -11,6 +11,12 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bx0ft"]
 radius = 0.0662443
 height = 0.920666
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_he57d"]
+radius = 6.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vc1u1"]
+radius = 11.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_44f2t"]
 
@@ -37,13 +43,23 @@ transform = Transform3D(-1.33333, -3.23791e-25, 4.23821e-08, -1.91065e-08, 1.190
 transform = Transform3D(1, -1.63588e-09, -4.21233e-11, 1.63588e-09, 0.998675, 0.0514645, -4.21245e-11, -0.0514645, 0.998675, -4.54953e-10, 0.884582, -0.0143127)
 shape = SubResource("CapsuleShape3D_bx0ft")
 
+[node name="PlayerChecker" type="Area3D" parent="Control"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/PlayerChecker"]
+shape = SubResource("CylinderShape3D_he57d")
+
+[node name="SwordChecker" type="Area3D" parent="Control"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/SwordChecker"]
+shape = SubResource("CylinderShape3D_vc1u1")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_44f2t")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="Blood" parent="." instance=ExtResource("3_nnf50")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [connection signal="area_entered" from="Control/HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="Control/PlayerChecker" to="." method="_on_player_checker_body_entered"]
+[connection signal="area_entered" from="Control/SwordChecker" to="." method="_on_sword_checker_area_entered"]
