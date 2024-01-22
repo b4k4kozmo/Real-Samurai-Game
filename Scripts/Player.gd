@@ -17,6 +17,10 @@ var DAMAGE
 @export var WALK_DAMAGE = 2
 @export var SPRINT_DAMAGE = 5
 
+# onreadys
+@onready var healthBar = $CanvasLayer/HealthBar
+@onready var staminaBar = $CanvasLayer/StaminaBar
+
 # Booleans
 var isAttacking = false
 var isSprinting = false
@@ -33,15 +37,19 @@ func _ready():
 	DAMAGE = WALK_DAMAGE
 	$Blood.hide()
 	print_debug(HP , STAMINA , DAMAGE)
+	healthBar.init_health(HP)
+	staminaBar.init_health(STAMINA)
 
 func _physics_process(delta):
 	# Add the gravity.
 	velocity.y -= gravity * delta
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and STAMINA >= 3:
 		velocity.y = JUMP_VELOCITY
 		STAMINA -= 3
+		staminaBar.health = STAMINA
 
 	# Handle Sprint.
 	if Input.is_action_pressed("sprint"):
@@ -50,6 +58,7 @@ func _physics_process(delta):
 			DAMAGE = SPRINT_DAMAGE
 			isSprinting = true
 			STAMINA -= .1
+			staminaBar.health = STAMINA
 		else:
 			SPEED = SLOW_SPEED
 	else:
@@ -65,6 +74,7 @@ func _physics_process(delta):
 		$Control/Katana.show()
 		$Control/Katana/SlashArea/CollisionShape3D.disabled = false
 		STAMINA -= .1
+		staminaBar.health = STAMINA
 		# print_debug(STAMINA)
 	elif Input.is_action_just_released("attack"):
 		isAttacking = false
@@ -77,8 +87,10 @@ func _physics_process(delta):
 		
 	if not isAttacking and not isSprinting:
 		STAMINA += .1
+		staminaBar.health = STAMINA
 		if STAMINA >= MAX_STAMINA:
 			STAMINA = MAX_STAMINA
+			staminaBar.health = STAMINA
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -103,9 +115,13 @@ func _on_hit_box_area_entered(area):
 	if area.is_in_group('sword'):
 		HP -= 3
 		$Blood.show()
+		healthBar.health = HP
 		print_debug(HP)
 		
 func die():
 	$Blood.hide()
 	print_debug('You have died')
 	HP = MAX_HP
+	STAMINA = MAX_STAMINA
+	healthBar.init_health(HP)
+	staminaBar.init_health(STAMINA)

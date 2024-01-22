@@ -1,3 +1,7 @@
+Timer
+Label
+CanvasLayer
+ProgressBar
 CollisionShape3D
 Area3D
 NavigationAgent3D

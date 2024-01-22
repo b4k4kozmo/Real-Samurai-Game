@@ -1,7 +1,8 @@
-res://Scripts/enemy.gd
-res://Prefabs/Player.tscn
 res://Shaders/Blood.tres
-res://Prefabs/Enemy.tscn
+res://Scripts/HealthBar.gd
+res://Prefabs/HealthBar.tscn
+res://Prefabs/Player.tscn
 res://Scenes/main.tscn
+res://Prefabs/Enemy.tscn
 res://Prefabs/BloodSpray.tscn
 res://Scripts/Player.gd
