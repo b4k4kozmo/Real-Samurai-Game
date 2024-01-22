@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://jt4yqcanphdc"]
+
+[ext_resource type="AudioStream" uid="uid://cncfd3da3k8yh" path="res://Music/samuraiBGM.mp3" id="1_ggjwh"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_ggjwh")
+autoplay = true

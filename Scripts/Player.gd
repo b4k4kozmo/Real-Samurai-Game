@@ -100,11 +100,12 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		$Control.look_at(global_position + direction, Vector3.UP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	$Control.look_at(global_position + direction, Vector3.UP)
+	
 	move_and_slide()
 	
 	if HP <= 0:

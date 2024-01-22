@@ -6,7 +6,6 @@ var PLAYER = null
 @export var HP = 10
 
 @export var PLAYER_PATH : NodePath
-@onready var nav_agent = $NavigationAgent3D
 
 # boolean switches
 var isAggro: bool = false
