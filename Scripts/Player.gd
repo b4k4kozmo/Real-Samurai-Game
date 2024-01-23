@@ -24,6 +24,12 @@ var DAMAGE
 # Booleans
 var isAttacking = false
 var isSprinting = false
+var canMove = true
+var isVulnerable = false
+
+# Counters
+var killCount = 0
+var dmgMultiplier = 1
 
 
 
@@ -39,14 +45,29 @@ func _ready():
 	print_debug(HP , STAMINA , DAMAGE)
 	healthBar.init_health(HP)
 	staminaBar.init_health(STAMINA)
+	$CanvasLayer/ColorRect.hide()
 
 func _physics_process(delta):
 	# Add the gravity.
 	velocity.y -= gravity * delta
 	
+	# Handle meditate
+	if Input.is_action_pressed("meditate") and STAMINA > 0:
+		canMove = false
+		isVulnerable = true
+		HP += .01
+		STAMINA -= 0.1
+		healthBar.health = HP
+		staminaBar.health = STAMINA
+		dmgMultiplier += .01
+		print_debug(dmgMultiplier)
+	if Input.is_action_just_released("meditate"):
+		canMove = true
+		isVulnerable = false
+		
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and STAMINA >= 3:
+	if Input.is_action_just_pressed("jump") and is_on_floor() and STAMINA >= 3 and canMove:
 		velocity.y = JUMP_VELOCITY
 		STAMINA -= 3
 		staminaBar.health = STAMINA
@@ -78,6 +99,7 @@ func _physics_process(delta):
 		# print_debug(STAMINA)
 	elif Input.is_action_just_released("attack"):
 		isAttacking = false
+		dmgMultiplier = 1
 	elif not isAttacking:
 		$Control/Katana.hide()
 		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
@@ -85,7 +107,7 @@ func _physics_process(delta):
 		$Control/Katana.hide()
 		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
 		
-	if not isAttacking and not isSprinting:
+	if not isAttacking and not isSprinting and canMove:
 		STAMINA += .1
 		staminaBar.health = STAMINA
 		if STAMINA >= MAX_STAMINA:
@@ -97,7 +119,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if direction and canMove:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		$Control.look_at(global_position + direction, Vector3.UP)
@@ -110,19 +132,25 @@ func _physics_process(delta):
 	
 	if HP <= 0:
 		die()
+	
+	$CanvasLayer/Label4.text = str(killCount)
 
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group('sword'):
-		HP -= 3
+		if not isVulnerable:
+			HP -= 3
+		else:
+			HP = -1
 		$Blood.show()
 		healthBar.health = HP
-		print_debug(HP)
+		$BloodTimer.start()
 		
 func die():
 	$Blood.hide()
-	print_debug('You have died')
-	HP = MAX_HP
-	STAMINA = MAX_STAMINA
-	healthBar.init_health(HP)
-	staminaBar.init_health(STAMINA)
+	BackgroundMusic.stop()
+	$CanvasLayer/ColorRect.show()
+
+
+func _on_blood_timer_timeout():
+	$Blood.hide()

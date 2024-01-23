@@ -9,6 +9,7 @@ var PLAYER = null
 
 # boolean switches
 var isAggro: bool = false
+var playerDetected: bool = false
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -38,6 +39,9 @@ func _physics_process(delta):
 		$Control/Katana/SlashArea/CollisionShape3D.disabled = false
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+	if not isAggro:
+		$Control/Katana.hide()
+		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
 	
 	look_at(Vector3(PLAYER.global_position.x, global_position.y, PLAYER.global_position.z), Vector3.UP)
 	
@@ -45,21 +49,42 @@ func _physics_process(delta):
 	
 	if HP <= 0:
 		PLAYER.STAMINA = PLAYER.MAX_STAMINA
+		PLAYER.killCount += 1
 		queue_free()
+		
 
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group('playerSword'):
-		HP -= PLAYER.DAMAGE
+		HP -= (PLAYER.DAMAGE * PLAYER.dmgMultiplier)
+		PLAYER.STAMINA += PLAYER.DAMAGE
 		$Blood.show()
-		print_debug(HP)
+		$BloodTimer.start()
 
 
 func _on_player_checker_body_entered(body):
 	if body.is_in_group('player'):
 		isAggro = true
+		playerDetected = true
 
 
 func _on_sword_checker_area_entered(area):
 	if area.is_in_group('playerSword'):
 		isAggro = true
+		playerDetected = true
+
+
+func _on_player_checker_body_exited(body):
+	if body.is_in_group('player') and playerDetected:
+		playerDetected = false
+		$AggroTimer.start()
+	
+
+
+func _on_aggro_timer_timeout():
+	if not playerDetected:
+		isAggro = false
+
+
+func _on_blood_timer_timeout():
+	$Blood.hide()

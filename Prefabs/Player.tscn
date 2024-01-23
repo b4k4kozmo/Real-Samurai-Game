@@ -71,6 +71,22 @@ offset_bottom = 47.0
 theme_override_font_sizes/font_size = 32
 text = "HP"
 
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 955.0
+offset_top = 7.0
+offset_right = 1088.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 32
+text = "KILLS:"
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 1061.0
+offset_top = 7.0
+offset_right = 1194.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
 [node name="Label2" type="Label" parent="CanvasLayer"]
 offset_left = 61.0
 offset_top = 78.0
@@ -79,4 +95,36 @@ offset_bottom = 123.0
 theme_override_font_sizes/font_size = 32
 text = "STAMINA"
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.00784314, 0.168627, 1)
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/ColorRect"]
+modulate = Color(0.490196, 0.14902, 0.560784, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = -88.5
+offset_right = 471.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[center]GAME OVER[/center]"
+
+[node name="BloodTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="area_entered" from="Control/HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="timeout" from="BloodTimer" to="." method="_on_blood_timer_timeout"]

@@ -60,6 +60,17 @@ shape = SubResource("CapsuleShape3D_44f2t")
 [node name="Blood" parent="." instance=ExtResource("3_nnf50")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
+[node name="AggroTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="BloodTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="area_entered" from="Control/HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="body_entered" from="Control/PlayerChecker" to="." method="_on_player_checker_body_entered"]
+[connection signal="body_exited" from="Control/PlayerChecker" to="." method="_on_player_checker_body_exited"]
 [connection signal="area_entered" from="Control/SwordChecker" to="." method="_on_sword_checker_area_entered"]
+[connection signal="timeout" from="AggroTimer" to="." method="_on_aggro_timer_timeout"]
+[connection signal="timeout" from="BloodTimer" to="." method="_on_blood_timer_timeout"]

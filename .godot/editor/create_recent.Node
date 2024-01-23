@@ -1,6 +1,8 @@
-AudioStreamPlayer
 Timer
+RichTextLabel
 Label
+ColorRect
+AudioStreamPlayer
 CanvasLayer
 ProgressBar
 CollisionShape3D
@@ -10,6 +12,3 @@ CharacterBody3D
 MeshInstance3D
 RigidBody3D
 Node3D
-NavigationRegion3D
-Camera3D
-Node
