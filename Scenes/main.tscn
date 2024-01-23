@@ -42,6 +42,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3811, 1.7, 0)
 SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
+[node name="Enemy2" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.3811, 1.7, -6)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
+[node name="Enemy3" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.381, 1.7, -6)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
+[node name="Enemy7" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.3811, 1.7, -15)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
+[node name="Enemy8" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.381, 1.7, -15)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
+[node name="Enemy9" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.381, 1.7, -15)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
+[node name="Enemy4" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.381, 1.7, -6)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
+[node name="Enemy5" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.381, 1.7, -6)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
+[node name="Enemy6" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.381, 1.7, -13)
+SPEED = 10.0
+PLAYER_PATH = NodePath("../../Player")
+
 [node name="Player" parent="." instance=ExtResource("2_1xo24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98847, 1)
 
