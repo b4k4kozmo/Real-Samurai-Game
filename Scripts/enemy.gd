@@ -6,7 +6,7 @@ var PLAYER = null
 @export var HP = 10
 
 @export var PLAYER_PATH : NodePath
-
+var direction
 # boolean switches
 var isAggro: bool = false
 var playerDetected: bool = false
@@ -32,18 +32,19 @@ func _physics_process(delta):
 	
 	velocity = Vector3.ZERO
 
-	var direction = Vector3.ZERO
+	direction = Vector3.ZERO
 	direction = (PLAYER.position - position).normalized()
 	if direction and isAggro:
 		$Control/Katana.show()
 		$Control/Katana/SlashArea/CollisionShape3D.disabled = false
+		look_at(Vector3(PLAYER.global_position.x, global_position.y, PLAYER.global_position.z), Vector3.UP)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	if not isAggro:
 		$Control/Katana.hide()
 		$Control/Katana/SlashArea/CollisionShape3D.disabled = true
 	
-	look_at(Vector3(PLAYER.global_position.x, global_position.y, PLAYER.global_position.z), Vector3.UP)
+	
 	
 	move_and_slide()
 	
@@ -56,8 +57,12 @@ func _physics_process(delta):
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group('playerSword'):
-		HP -= (PLAYER.DAMAGE * PLAYER.dmgMultiplier)
+		if not isAggro:
+			HP -= (PLAYER.DAMAGE * PLAYER.dmgMultiplier) * 2
+		else:
+			HP -= (PLAYER.DAMAGE * PLAYER.dmgMultiplier)
 		PLAYER.STAMINA += PLAYER.DAMAGE
+		isAggro = true
 		$Blood.show()
 		$BloodTimer.start()
 

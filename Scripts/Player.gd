@@ -4,6 +4,7 @@ var SPEED
 var HP
 var STAMINA
 var DAMAGE
+var direction
 
 # Phyisics variables
 @export var WALK_SPEED = 10.0
@@ -26,6 +27,7 @@ var isAttacking = false
 var isSprinting = false
 var canMove = true
 var isVulnerable = false
+var isKnocked = false
 
 # Counters
 var killCount = 0
@@ -118,8 +120,8 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction and canMove:
+	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction and canMove and not isKnocked:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		$Control.look_at(global_position + direction, Vector3.UP)
@@ -139,7 +141,11 @@ func _physics_process(delta):
 func _on_hit_box_area_entered(area):
 	if area.is_in_group('sword'):
 		if not isVulnerable:
+			isKnocked = true
 			HP -= 3
+			velocity.x = area.get_parent().get_parent().get_parent().direction.x * 100
+			velocity.z = area.get_parent().get_parent().get_parent().direction.z * 100
+			$KnockTimer.start()
 		else:
 			HP = -1
 		$Blood.show()
@@ -154,3 +160,7 @@ func die():
 
 func _on_blood_timer_timeout():
 	$Blood.hide()
+
+
+func _on_knock_timer_timeout():
+	isKnocked = false

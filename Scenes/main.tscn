@@ -38,7 +38,7 @@ navigation_mesh = SubResource("NavigationMesh_q7ufx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.961, 0, -10.1221)
 
 [node name="Enemy" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3811, 1.7, 0)
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 47.3811, 1.7, 0)
 SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
@@ -53,17 +53,17 @@ SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
 [node name="Enemy7" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.3811, 1.7, -15)
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 94.3811, 1.7, -15)
 SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
 [node name="Enemy8" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.381, 1.7, -15)
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 121.381, 1.7, -15)
 SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
 [node name="Enemy9" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.381, 1.7, -15)
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 152.381, 1.7, -15)
 SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
@@ -73,12 +73,12 @@ SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
 [node name="Enemy5" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.381, 1.7, -6)
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 194.381, 1.7, -6)
 SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 
 [node name="Enemy6" parent="NavigationRegion3D" instance=ExtResource("3_7vv0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.381, 1.7, -13)
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 194.381, 1.7, -13)
 SPEED = 10.0
 PLAYER_PATH = NodePath("../../Player")
 

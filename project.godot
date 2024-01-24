@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 BackgroundMusic="*res://Prefabs/background_music.tscn"
 
+[editor]
+
+movie_writer/movie_file="/Users/kozuemon/Documents/GamePlayVideos/RealSamurai.avi"
+
 [input]
 
 move_up={

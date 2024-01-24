@@ -126,5 +126,10 @@ text = "[center]GAME OVER[/center]"
 wait_time = 1.5
 one_shot = true
 
+[node name="KnockTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="area_entered" from="Control/HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="timeout" from="BloodTimer" to="." method="_on_blood_timer_timeout"]
+[connection signal="timeout" from="KnockTimer" to="." method="_on_knock_timer_timeout"]

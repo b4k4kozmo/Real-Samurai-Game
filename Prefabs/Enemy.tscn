@@ -13,10 +13,10 @@ radius = 0.0662443
 height = 0.920666
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_he57d"]
-radius = 6.0
+radius = 4.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vc1u1"]
-radius = 11.0
+radius = 5.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_44f2t"]
 
@@ -46,9 +46,11 @@ shape = SubResource("CapsuleShape3D_bx0ft")
 [node name="PlayerChecker" type="Area3D" parent="Control"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control/PlayerChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 shape = SubResource("CylinderShape3D_he57d")
 
 [node name="SwordChecker" type="Area3D" parent="Control"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.33333)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control/SwordChecker"]
 shape = SubResource("CylinderShape3D_vc1u1")
