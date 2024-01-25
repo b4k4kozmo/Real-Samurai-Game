@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706121966
+::res://::1706207997
 icon.svg::CompressedTexture2D::2193359882595127890::1705614533::1705870012::1::::<><>::
 ::res://Assets/::1705616057
 ::res://Assets/Raw Models/::1705616057
@@ -7,19 +7,19 @@ Katana.glb::PackedScene::6059711546838908792::1705616057::1705616057::1::::<><>:
 TestScene.glb::PackedScene::3913607128621060462::1705616057::1705616057::1::::<><>::
 ::res://Music/::1705959505
 samuraiBGM.mp3::AudioStreamMP3::5689735507860356363::1705958876::1705959505::1::::<><>::
-::res://Prefabs/::1706042163
+::res://Prefabs/::1706125208
 background_music.gd::GDScript::-1::1705959510::0::1::::<>AudioStreamPlayer<>::
-background_music.tscn::PackedScene::672727265394553420::1706042163::0::1::::<><>::uid://cncfd3da3k8yh::::res://Music/samuraiBGM.mp3
-BloodSpray.tscn::PackedScene::6549895637462306634::1706042163::0::1::::<><>::uid://66f67em0k06e::::res://Shaders/Blood.tres
-Enemy.tscn::PackedScene::495826929569924024::1706042163::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn
-HealthBar.tscn::PackedScene::2356896084296741460::1706042163::0::1::::<><>::res://Scripts/HealthBar.gd
-Player.tscn::PackedScene::8949023211792305658::1706042163::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn<>uid://8txy7xqq36fo::::res://Prefabs/HealthBar.tscn
-::res://Scenes/::1706042163
-main.tscn::PackedScene::7265652000815263802::1706042163::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
+background_music.tscn::PackedScene::672727265394553420::1706125208::0::1::::<><>::uid://cncfd3da3k8yh::::res://Music/samuraiBGM.mp3
+BloodSpray.tscn::PackedScene::6549895637462306634::1706125208::0::1::::<><>::uid://66f67em0k06e::::res://Shaders/Blood.tres
+Enemy.tscn::PackedScene::495826929569924024::1706125208::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn
+HealthBar.tscn::PackedScene::2356896084296741460::1706125208::0::1::::<><>::res://Scripts/HealthBar.gd
+Player.tscn::PackedScene::8949023211792305658::1706125208::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn<>uid://8txy7xqq36fo::::res://Prefabs/HealthBar.tscn
+::res://Scenes/::1706125208
+main.tscn::PackedScene::7265652000815263802::1706125208::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
 test_scene.tscn::PackedScene::3656141386211522353::1705744096::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
-::res://Scripts/::1706042018
-enemy.gd::GDScript::-1::1706038136::0::1::::<>CharacterBody3D<>::
+::res://Scripts/::1706125117
+enemy.gd::GDScript::-1::1706125117::0::1::::<>CharacterBody3D<>::
 HealthBar.gd::GDScript::-1::1705958592::0::1::::<>ProgressBar<>::
-Player.gd::GDScript::-1::1706042018::0::1::::<>CharacterBody3D<>::
-::res://Shaders/::1706042018
-Blood.tres::VisualShader::2240210495235219814::1706042018::0::1::::<><>::
+Player.gd::GDScript::-1::1706124050::0::1::::<>CharacterBody3D<>::
+::res://Shaders/::1706122161
+Blood.tres::VisualShader::2240210495235219814::1706122161::0::1::::<><>::

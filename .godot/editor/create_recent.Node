@@ -1,3 +1,5 @@
+CollisionShape3D
+StaticBody3D
 Timer
 RichTextLabel
 Label
@@ -5,10 +7,8 @@ ColorRect
 AudioStreamPlayer
 CanvasLayer
 ProgressBar
-CollisionShape3D
 Area3D
 NavigationAgent3D
 CharacterBody3D
 MeshInstance3D
 RigidBody3D
-Node3D
