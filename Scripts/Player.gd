@@ -21,6 +21,7 @@ var direction
 # onreadys
 @onready var healthBar = $CanvasLayer/HealthBar
 @onready var staminaBar = $CanvasLayer/StaminaBar
+@onready var victoryTimer = $VictoryTimer
 
 # Booleans
 var isAttacking = false
@@ -32,6 +33,9 @@ var isKnocked = false
 # Counters
 var killCount = 0
 var dmgMultiplier = 1
+
+#constant variables
+var killsNeeded = 9 #change this number to match number of enemies
 
 
 
@@ -136,6 +140,11 @@ func _physics_process(delta):
 		die()
 	
 	$CanvasLayer/Label4.text = str(killCount)
+	
+	# triggers victory screens
+	if killCount >= killsNeeded:
+		if victoryTimer.is_stopped():
+			victoryTimer.start()
 
 
 func _on_hit_box_area_entered(area):
@@ -164,3 +173,11 @@ func _on_blood_timer_timeout():
 
 func _on_knock_timer_timeout():
 	isKnocked = false
+
+
+
+
+func _on_victory_timer_timeout():
+	killCount = 0
+	$CanvasLayer/ColorRect/Label.text = '[center]YOU WIN![/center]'
+	die()

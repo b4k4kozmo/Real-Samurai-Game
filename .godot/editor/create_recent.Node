@@ -1,6 +1,6 @@
+Timer
 CollisionShape3D
 StaticBody3D
-Timer
 RichTextLabel
 Label
 ColorRect
