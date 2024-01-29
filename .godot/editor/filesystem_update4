@@ -1,10 +1,9 @@
-res://Scenes/main.tscn
+res://Prefabs/Player.tscn
 res://Scripts/Player.gd
 res://Shaders/Blood.tres
-res://Prefabs/Player.tscn
+res://Scenes/main.tscn
 res://Prefabs/BloodSpray.tscn
 res://Prefabs/HealthBar.tscn
 res://Prefabs/Enemy.tscn
 res://Prefabs/background_music.tscn
 res://Scenes/test_scene.tscn
-res://Scripts/enemy.gd
