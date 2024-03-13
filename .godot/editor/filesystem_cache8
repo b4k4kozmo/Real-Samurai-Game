@@ -1,25 +1,33 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706571064
+::res://::1707851444
+export_presets.cfg::TextFile::-1::1707012072::0::1::::<><>::
 icon.svg::CompressedTexture2D::2193359882595127890::1705614533::1705870012::1::::<><>::
 ::res://Assets/::1705616057
 ::res://Assets/Raw Models/::1705616057
 Katana.glb::PackedScene::6059711546838908792::1705616057::1705616057::1::::<><>::
 TestScene.glb::PackedScene::3913607128621060462::1705616057::1705616057::1::::<><>::
+::res://builds/::1707011972
+::res://builds/windows-build/::1707011967
+::res://builds/windows-build/RealSamurai/::1706574450
+::res://builds/windows-build/webtest/::1707012071
+RealSamurai.exe.apple-touch-icon.png::CompressedTexture2D::8206961092619206045::1707012071::1707012056::1::::<><>::
+RealSamurai.exe.icon.png::CompressedTexture2D::4967272317881982804::1707012071::1707012056::1::::<><>::
+RealSamurai.exe.png::CompressedTexture2D::1004150311000197065::1707012071::1707012056::1::::<><>::
 ::res://Music/::1705959505
 samuraiBGM.mp3::AudioStreamMP3::5689735507860356363::1705958876::1705959505::1::::<><>::
-::res://Prefabs/::1706227842
+::res://Prefabs/::1706571506
 background_music.gd::GDScript::-1::1705959510::0::1::::<>AudioStreamPlayer<>::
-background_music.tscn::PackedScene::672727265394553420::1706227780::0::1::::<><>::uid://cncfd3da3k8yh::::res://Music/samuraiBGM.mp3
-BloodSpray.tscn::PackedScene::6549895637462306634::1706227780::0::1::::<><>::uid://66f67em0k06e::::res://Shaders/Blood.tres
-Enemy.tscn::PackedScene::495826929569924024::1706227780::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn
-HealthBar.tscn::PackedScene::2356896084296741460::1706227780::0::1::::<><>::res://Scripts/HealthBar.gd
-Player.tscn::PackedScene::8949023211792305658::1706227842::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn<>uid://8txy7xqq36fo::::res://Prefabs/HealthBar.tscn
-::res://Scenes/::1706227781
-main.tscn::PackedScene::7265652000815263802::1706227780::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
-test_scene.tscn::PackedScene::3656141386211522353::1706227781::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
-::res://Scripts/::1706227842
+background_music.tscn::PackedScene::672727265394553420::1706571189::0::1::::<><>::uid://cncfd3da3k8yh::::res://Music/samuraiBGM.mp3
+BloodSpray.tscn::PackedScene::6549895637462306634::1706571189::0::1::::<><>::uid://66f67em0k06e::::res://Shaders/Blood.tres
+Enemy.tscn::PackedScene::495826929569924024::1706571189::0::1::::<><>::uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>res://Scripts/enemy.gd<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn
+HealthBar.tscn::PackedScene::2356896084296741460::1706571189::0::1::::<><>::res://Scripts/HealthBar.gd
+Player.tscn::PackedScene::8949023211792305658::1706571506::0::1::::<><>::res://Scripts/Player.gd<>uid://cslmtf2hxu6ci::::res://Assets/Raw Models/Katana.glb<>uid://c0k23a1iqwsny::::res://Prefabs/BloodSpray.tscn<>uid://8txy7xqq36fo::::res://Prefabs/HealthBar.tscn
+::res://Scenes/::1706571189
+main.tscn::PackedScene::7265652000815263802::1706571189::0::1::::<><>::uid://bsdcd5k2v1sv6::::res://Scenes/test_scene.tscn<>uid://d0q8dtghr0a3k::::res://Prefabs/Player.tscn<>uid://hcggx3m383wu::::res://Prefabs/Enemy.tscn
+test_scene.tscn::PackedScene::3656141386211522353::1706571189::0::1::::<><>::uid://bv01sjq0jqeug::::res://Assets/Raw Models/TestScene.glb
+::res://Scripts/::1706571189
 enemy.gd::GDScript::-1::1706227048::0::1::::<>CharacterBody3D<>::
 HealthBar.gd::GDScript::-1::1705958592::0::1::::<>ProgressBar<>::
-Player.gd::GDScript::-1::1706227842::0::1::::<>CharacterBody3D<>::
-::res://Shaders/::1706226172
-Blood.tres::VisualShader::2240210495235219814::1706226172::0::1::::<><>::
+Player.gd::GDScript::-1::1706571189::0::1::::<>CharacterBody3D<>::
+::res://Shaders/::1706571189
+Blood.tres::VisualShader::2240210495235219814::1706571189::0::1::::<><>::

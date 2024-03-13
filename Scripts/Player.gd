@@ -29,10 +29,13 @@ var isSprinting = false
 var canMove = true
 var isVulnerable = false
 var isKnocked = false
+#var isVictory = false
 
 # Counters
 var killCount = 0
 var dmgMultiplier = 1
+var jumpCount = 0
+var maxJump = 2
 
 #constant variables
 var killsNeeded = 9 #change this number to match number of enemies
@@ -73,7 +76,10 @@ func _physics_process(delta):
 		
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and STAMINA >= 3 and canMove:
+	if is_on_floor():
+		jumpCount = 0
+	if Input.is_action_just_pressed("jump") and jumpCount < maxJump and STAMINA >= 3 and canMove:
+		jumpCount += 1
 		velocity.y = JUMP_VELOCITY
 		STAMINA -= 3
 		staminaBar.health = STAMINA

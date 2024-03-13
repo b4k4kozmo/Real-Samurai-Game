@@ -81,10 +81,9 @@ func _on_sword_checker_area_entered(area):
 
 func _on_player_checker_body_exited(body):
 	if body.is_in_group('player') and playerDetected:
-		if PLAYER.isVictory:
-			PLAYER.victoryTimer.start()
-		else:
-			playerDetected = false
+		
+		playerDetected = false
+		if HP > 0:
 			$AggroTimer.start()
 	
 
