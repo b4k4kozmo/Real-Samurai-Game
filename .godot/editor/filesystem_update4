@@ -7,4 +7,3 @@ res://Prefabs/HealthBar.tscn
 res://Prefabs/Enemy.tscn
 res://Prefabs/background_music.tscn
 res://Scenes/test_scene.tscn
-res://Scripts/enemy.gd

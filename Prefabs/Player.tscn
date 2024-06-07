@@ -33,7 +33,7 @@ mesh = SubResource("CapsuleMesh_mgrmh")
 shape = SubResource("CapsuleShape3D_1qt0n")
 
 [node name="Katana" parent="Control" groups=["playerSword"] instance=ExtResource("2_ywunr")]
-transform = Transform3D(-1.33333, -3.23791e-25, 4.23821e-08, -1.91065e-08, 1.19016, -0.601087, -3.7831e-08, -0.601087, -1.19016, 0, 0, -0.666667)
+transform = Transform3D(-1.33333, 4.48402e-16, 4.23821e-08, -3.49617e-08, 0.753677, -1.09989, -2.39567e-08, -1.09989, -0.753677, 0, 0, -0.666667)
 
 [node name="SlashArea" type="Area3D" parent="Control/Katana" groups=["playerSword"]]
 
