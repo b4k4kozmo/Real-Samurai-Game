@@ -56,7 +56,17 @@ func _ready():
 	staminaBar.init_health(STAMINA)
 	$CanvasLayer/ColorRect.hide()
 
+func _process(delta):
+	if Input.is_action_just_pressed("exit"):
+		get_tree().quit()
+	if Input.is_action_just_pressed("restart"):
+		restart()
+
+func restart():
+	get_tree().reload_current_scene()
+
 func _physics_process(delta):
+	
 	# Add the gravity.
 	velocity.y -= gravity * delta
 	
